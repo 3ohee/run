@@ -84,19 +84,36 @@
 					 </tr>
 					</thead>
 					<tbody>
-						<tr>
+						<c:choose>
+				<c:when test="${empty list}">
+				  <tr><td colspan="5">자료가 존재하지 않습니다</td></tr>
+				</c:when>
+				<c:otherwise>
+					<c:forEach var="k" items="${list}" varStatus="vs">
+					  <tr>
+					  	<td>${vs.count}</td>
+					  	<td>${k.post_title}</td>
+					  	<td>${k.post_content}</td>
+					  	<td>${k.post_views}</td>
+					  	<td>${k.post_created_at}</td>
+					  </tr>
+					</c:forEach>				
+				</c:otherwise>
+			</c:choose>
+						
+					<!-- 	<tr>
 							<td> </td>
 							<td> </td>
 							<td> </td>
-							<!-- 작성자 DB?  -->
+							작성자 DB? 
 							<td> </td>
-							<!-- 조회수  -->
+							조회수 
 							<td> </td>
-							<!-- 좋아요  -->
+							좋아요 
 							<td> </td>
-							<!-- 작성일  -->
+							작성일 
 							<td> </td>
-						</tr>
+						</tr> -->
 					
 					</tbody>
 					

@@ -11,6 +11,25 @@ public class PostsVO {
 		post_created_at,
 		post_updated_at,
 		post_is_public;
+	
+	private String idx, keyword;
+    
+
+	public String getIdx() {
+		return idx;
+	}
+
+	public void setIdx(String idx) {
+		this.idx = idx;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
 
 	private String user_name;
 	

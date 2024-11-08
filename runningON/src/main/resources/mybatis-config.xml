@@ -18,8 +18,8 @@
 		<typeAlias type="com.ict.runningON.vo.Group_joinVO"  alias="gjvo" />
 		<typeAlias type="com.ict.runningON.vo.GroupsVO"  alias="gvo" />
 		<typeAlias type="com.ict.runningON.vo.LikesVO"  alias="lvo" />
-		<typeAlias type="com.ict.runningON.vo.MessagesVO"  alias="mvo" />
-		<typeAlias type="com.ict.runningON.vo.PostsVO"  alias="pvo" /> -->
+		<typeAlias type="com.ict.runningON.vo.MessagesVO"  alias="mvo" /> -->
+		<typeAlias type="com.ict.runningON.vo.PostsVO"  alias="pvo" /> 
 		<typeAlias type="com.ict.runningON.vo.UsersVO"  alias="uvo" />
 	</typeAliases>
 	

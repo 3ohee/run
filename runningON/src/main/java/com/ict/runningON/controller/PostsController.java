@@ -2,13 +2,19 @@ package com.ict.runningON.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.ict.runningON.service.SearchService;
+import com.ict.runningON.vo.PostsVO;
 
 @Controller
 public class PostsController {
@@ -49,4 +55,29 @@ public class PostsController {
 	    // 저장된 파일의 URL 반환
 	    return "/resources/upload/" + fileName;
 	}
+	
+	
+	// csh
+	
+	@Autowired
+	private SearchService searchService;
+	
+	
+	@PostMapping("/emp_dynamic_search")
+	public ModelAndView emp_dynamic_search(
+			@RequestParam("keyword") String keyword) {
+		try {
+			ModelAndView mv = new ModelAndView("day05/emp_dynamic");
+			List<PostsVO> list = searchService.getSearch(keyword);
+			mv.addObject("list", list);
+			
+			return mv;
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
+	
+	
+	
 }
